@@ -94,7 +94,7 @@ namespace TargetApp
                 Process = Process.Start(ProcessPath, Handle.ToString());
             }
 
-            int tries = 100;
+            int tries = 1000;
             while(tries-- > 0)
             {
                 var childHandle = GetWindow(Handle, GetWindowType.GW_CHILD);
@@ -111,7 +111,7 @@ namespace TargetApp
             UpdateClientSize();
         }
 
-        private void UpdateClientSize()
+        public void UpdateClientSize()
         {
             if (ChildHandle != IntPtr.Zero)
             {
